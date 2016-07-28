@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ks81 Notes</title>
+  </head>
+  <body>
+    <h1>ks81 Notes</h1>
+    <h2>Table of Content</h2>
+    <ul>
+      <li>Intro to Programming Nanodegree
+        <ul>
+          <li>Thinking like a programmer</li>
+        </ul>
+      </li>
+      <li>Stage 0: Getting Started with HTML
+        <ul>
+          <li>Basic of the Web and html
+            <ul>
+              <li>Major Pieses of the web</li>
+              <li>HTML is mad up of</li>
+              <li>HTML Markup
+                <ul>
+                  <li>HTML Tags</li>
+                  <li>HTML Attributes</li>
+                  <li>Inline vs Block
+                    <ul>
+                      <li>Block-level Elements</li>
+                      <li>Inline Elements</li>
+                    </ul>
+                  </li>
+                </ul>
+            </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Abbreviations</li>
+      <li>Usefull Resources
+        <ul>
+          <li>
+            HTML
+          </li>
+          <li>
+            CSS
+          </li>
+          <li>
+            JavaScript
+          </li>
+        </ul>
+      </li>
+      <li>Cite Resources Used
+        <ul>
+          <li>w3schools.com</li>
+        </ul>
+      </li>
+    </ul>
+    <h2>Intro to Programming Nanodegree</h2>
+    <ul>
+      <li>
+        <p>For questions and help with the Nanodegree, a great place can be the Udacity Community.</p>
+        <ul>
+          <li><a href="https://discussions.udacity.com/">Forums</a></li>
+          <li>
+            <a href="https://discussions.udacity.com/c/nd000-ipnd-broadcast">Intro to Programming Broadcast</a>
+            <ul>
+              <li><a href="https://discussions.udacity.com/c/nd000-ipnd-broadcast/announcements">Announcements</a></li>
+              <li><a href="https://discussions.udacity.com/c/nd000-ipnd-broadcast/webcast-notes">Webcast Notes</a></li>
+              <li><a href="https://discussions.udacity.com/c/nd000-ipnd-broadcast/coach-access-calendars">Coach Access Calendars</a></li>
+            </ul>
+          </li>
+          <li><a href="https://discussions.udacity.com/c/nd000-ipnd-cafe">IPND Café</a></li>
+          <li><a href="https://discussions.udacity.com/c/nd000-stages-0-1-make-a-web-page">IPND Stage 0-1: Make a Web Page</a></li>
+        </ul>
+      </li>
+    </ul>
+    <h3>Thinking like a programmer</h3>
+    <p>This Nanodegree will focuse on five diffent ways of "think like a computer progammer".</p>
+    <ol>
+      <li>Procedural Thinking
+        <p>Creating perfectly clear and unambiguous instruction for a computer to follow.</p>
+      </li>
+      <li>Abstract Thinking
+        <p>Finding similarity or generality amongst seemingly diffrent things.</p>
+        <p>Abstraction is used in programming to avoid unnecessary repetition of work.</p>
+      </li>
+      <li>Systems Thinking
+        <p>Breaking a big problem down into smaller manageable pieces.</p>
+        <p>It involves big-picture thinking and decision-making about a problem and how different pieces of a program can work together to solve it.</p>
+      </li>
+      <li>Technological Empathy
+        <p>Comes in many forms. For example, computer empathy is the ability to understand what a computer is, how it works, and what it´s good and bad at doing.</p>
+        <p>As a programmer it is vital to have a basic understanding how a computer and the tools are working.</p>
+      </li>
+      <li>Debugging
+        <p>Debugging is a systematic process to identifying the cause to way a program doesn´t work.</p>
+        <p>A basic systematic process can be:</p>
+        <ol>
+          <li>Collect evidence (what makes this program fail?)</li>
+          <li>Generate theories (what may have caused this problem?)</li>
+          <li>Test those theories (if my theory is correct, how could I find out?)</li>
+          <li>Fix the problem</li>
+        </ol>
+      </li>
+    </ol>
+    <h2>Stage 0: Getting Started with HTML</h2>
+    <h3>Basic of the Web and html</h3>
+    <p>World wide Web (WWW) consists of HTML pages that uses HyperText Markup Language (HTML) to markup the pages that the web browser interpets and renders to the user.</p>
+    <p>HTML pages are linked together with Hyper Links (links).</p>
+    <p>The web was invented in the early 1990s and have over 30 Billion pages.</p>
+    <p>Examples of files that can be found on the web:</p>
+    <ul>
+      <li>Plain text</li>
+      <li>HTML</li>
+      <li>Images</li>
+      <li>Videos</li>
+      <li>Music</li>
+    </ul>
+    <h4>Major Pieses of the web:</h4>
+    <ul>
+      <li>The user that consist of:
+        <ul>
+          <li>Computer</li>
+          <li>Browser
+            <ul>
+              <li>A program that runs on the computer to display files found on the web.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>The Internet
+        <ul>
+          <li>The worlds largest computer network.</li>
+        </ul>
+      </li>
+      <li>Servers
+        <ul>
+          <li>Computers that host the files that make up the web.</li>
+        </ul>
+      </li>
+      <li>The browser communicates with the servers over the internet using HTTP.
+        <ul>
+          <li>HTTP - the main protocol of the web.</li>
+        </ul>
+      </li>
+    </ul>
+    <h4>HTML is mad up of:</h4>
+    <ul>
+      <li>Text content.</li>
+      <li>Markup.</li>
+      <li>References to other documents.</li>
+      <li>Links to other pages.</li>
+    </ul>
+    <h4>HTML Markup</h4>
+    <h5>HTML Tags</h5>
+    <p>&lt;NAME&gt;content&lt;/NAME&gt;</p>
+    <p>Opening Tag: &lt;NAME&gt;<br>
+      Closing Tag: &lt;/NAME&gt;<br>
+      Element Content: content<br>
+      Element: &lt;NAME&gt;content&lt;/NAME&gt; (The HTML element is everything from the Opening Tag to the Closing Tag.)</p>
+    <table>
+      <tr>
+        <th>Tag</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>&lt;b&gt;</td>
+        <td>Defines bold text</td>
+        <td>This is normal text - &lt;b&gt;and this is bold text&lt;/b&gt;.</td>
+        <td>This is normal text - <b>and this is bold text</b>.</td>
+      </tr>
+      <tr>
+        <td>&lt;em&gt;</td>
+        <td>Defines emphasized text</td>
+        <td>This is normal text - &lt;em&gt;and this is emphasized text&lt;/em&gt;.</td>
+        <td>This is normal text - <em>and this is emphasized text</em>.</td>
+      </tr>
+      <tr>
+        <td>&lt;a&gt;</td>
+        <td>Defines a hyperlink</td>
+        <td>&lt;a href=&quot;http://www.udacity.com&quot;&gt;udacity.com&lt;/a&gt;</td>
+        <td><a href="http://www.udacity.com">udacity.com</a></td>
+      </tr>
+      <tr>
+        <td>&lt;img&gt;</td>
+        <td>Defines an image (VOID Tag)</td>
+        <td>&lt;img src=&quot;http://www.udacity.com/cs253x/hipmunk.png&quot; alt=&quot;hipmunk&quot;&gt;</td>
+        <td><img src="http://www.udacity.com/cs253x/hipmunk.png" alt="hipmunk"></td>
+      </tr>
+      <tr>
+        <td>&lt;br&gt;</td>
+        <td>Defines a single line break (VOID Tag)</td>
+        <td>Line 1&lt;br&gt;Line 2</td>
+        <td>Line 1<br>Line 2</td>
+      </tr>
+      <tr>
+        <td>&lt;p&gt;</td>
+        <td>Defines a single line break (VOID Tag)</td>
+        <td>&lt;p&gt;Paragraph 1&lt;/p&gt;&lt;p&gt;Paragraph 2&lt;/p&gt;</td>
+        <td><p>Paragraph 1</p><p>Paragraph 2</p></td>
+      </tr>
+      <tr>
+        <td>&lt;div&gt;</td>
+        <td>Defines a section in a document<br>
+          The tag defines a division or a section in an HTML document.<br>
+          The tag is used to group block-elements to format them with CSS.
+        </td>
+        <td>&lt;div&gt;&lt;p&gt;Paragraph 1&lt;/p&gt;&lt;p&gt;Paragraph 2&lt;/p&gt;&lt;/div&gt;</td>
+        <td><div><p>Paragraph 1</p><p>Paragraph 2</p></div></td>
+      </tr>
+      <tr>
+        <td>&lt;span&gt;</td>
+        <td>Defines a section in a document<br>
+          The tag is used to group inline-elements in a document.<br>
+          The tag provides no visual change by itself.<br>
+          The tag provides a way to add a hook to a part of a text or a part of a document.</td>
+        <td>&lt;p&gt;Paragraph &lt;span&gt;text&lt;/span&gt;&lt;/p&gt;</td>
+        <td><p>Paragraph <span>text</span></p></td>
+      </tr>
+    </table>
+    <h5>HTML Attributes</h5>
+    <p>&lt;TAG ATTR=&quot;value&quot;&gt;Content&lt;/TAG&gt;</p>
+    <p>Example: &lt;a href=&quot;http://www.udacity.com&quot;&gt;udacity.com&lt;/a&gt;<br>
+      Attribute Name: href<br>
+      Attribute Value: http://www.udacity.com</p>
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>href</td>
+        <td>Specifies the URL of the page the link goes to.</td>
+        <td>&lt;a href=&quot;http://www.udacity.com&quot;&gt;udacity.com&lt;/a&gt;</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>Specifies the URL of the media file.</td>
+        <td>&lt;img src=&quot;image.jpg&quot;&gt;</td>
+      </tr>
+      <tr>
+        <td>alt</td>
+        <td>Specifies an alternate text when the original element fails to display.</td>
+        <td>&lt;img src=&quot;image.jpg&quot; alt=&quot;This is an image&quot;&gt;</td>
+      </tr>
+    </table>
+    <h5>Inline vs Block</h5>
+    <p>Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.</p>
+    <h6>Block-level Elements</h6>
+    <p>A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).</p>
+    <p>Examples of block-level elements:
+      <ul>
+        <li>&lt;div&gt;</li>
+        <li>&lt;h1&gt; - &lt;h6&gt;</li>
+        <li>&lt;p&gt;</li>
+        <li>&lt;form&gt;</li>
+      </ul>
+    </p>
+    <h6>Inline Elements</h6>
+    <p>An inline element does not start on a new line and only takes up as much width as necessary.</p>
+    <p>Examples of block-level elements:
+      <ul>
+        <li>&lt;span&gt;</li>
+        <li>&lt;a&gt;</li>
+        <li>&lt;img&gt;</li>
+      </ul>
+    </p>
+    <h2>Abbreviations</h2>
+    <ul>
+      <li>WWW - World wide Web</li>
+      <li>HTML - HyperText Markup Language</li>
+      <li>CSS - Cascading Style Sheets</li>
+      <li>JS - JavaScript</li>
+      <li>HTTP - HyperText Transfer Protocol</li>
+    </ul>
+    <h2>Usefull Resources</h2>
+    <h3>HTML</h3>
+    <ul>
+      <li><a href="http://www.w3schools.com/html/default.asp">w3schools.com - HTML</a></li>
+      <li><a href="http://www.httputility.net/html-encode-decode.aspx">HTML Encode / Decode</a></li>
+    </ul>
+    <h3>CSS</h3>
+    <ul>
+      <li><a href="http://www.w3schools.com/css/default.asp">w3schools.com - CSS</a></li>
+    </ul>
+    <h3>JavaScript</h3>
+    <ul>
+      <li><a href="http://www.w3schools.com/js/default.asp">w3schools.com - JavaScript</a></li>
+    </ul>
+    <h2>Cite Resources Used</h2>
+    <h3>w3schools.com</h3>
+    <ul>
+      <li><a href="http://www.w3schools.com/html/default.asp">HTML</a></li>
+      <li><a href="http://www.w3schools.com/tags/default.asp">HTML Element Reference</a></li>
+      <li><a href="http://www.w3schools.com/tags/ref_attributes.asp">HTML Attribute Reference</a></li>
+      <li><a href="http://www.w3schools.com/html/html_blocks.asp">HTML Block and Inline Elements</a></li>
+    </ul>
+  </body>
+</html>
