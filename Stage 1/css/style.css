@@ -1,0 +1,354 @@
+/* General style info - START */
+
+body {
+    margin: 0;
+}
+
+header, footer{
+    color: #ECF0F1;
+    background-color: #2C3E50;
+}
+
+/* General style info - END */
+
+/* Header - START */
+
+header {
+    border-bottom: 0.25em solid #E74C3C;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1em 1em 0 2em;
+}
+
+/* Site/Page Logo - START */
+
+h1 {
+    margin: 0 1em 0 0;
+}
+
+h1 a {
+    color: #ECF0F1;
+    text-decoration: none;
+    -webkit-transition: text-shadow 0.5s;
+            transition: text-shadow 0.5s;
+}
+
+h1 a:hover {
+    text-shadow: 0.3125em 0.3125em #E74C3C;
+}
+
+/* Site/Page Logo - END */
+
+/* Site/Page Navigation Bar - START */
+
+/*
+ * Horizontal Navigation Bar w/Dropdown Submenu (1 level deep)
+ */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+nav li {
+    float: left;
+    min-width: 150px;
+}
+nav li a {
+    color: #ECF0F1;
+    display: block;
+    padding: 1em 0;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: 
+        /* Step 1 */
+        background-color 0.5s,
+        /* Step 2 */
+        color 0.5s 0.5s;
+    transition: 
+        /* Step 1 */
+        background-color 0.5s,
+        /* Step 2 */
+        color 0.5s 0.5s;
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+}
+
+nav li a:hover:not(.active) {
+    color: #2C3E50;
+    background-color: #ECF0F1;
+}
+
+nav a.active {
+    background-color: #E74C3C;
+}
+
+/* Dropdown Submenu (1 level deep) */
+
+nav li ul {
+    display: none;
+    position: absolute;
+    /* TODO: Animation do not work with "display: none" property.
+             Can use JavaScript to get around this. */
+    /*
+    -webkit-animation: sumMenuOut 0.5s ease-in;
+            animation: sumMenuOut 0.5s ease-in;
+    */
+}
+
+nav li:hover ul {
+    background-color: rgba(44, 62, 80, 1);
+    box-shadow: 0.5em 0.5em 1em black;
+    display: block;
+    -webkit-animation: sumMenuIn 0.5s ease-in;
+            animation: sumMenuIn 0.5s ease-in;
+}
+
+nav li ul li {
+    float: none;
+}
+
+@-webkit-keyframes sumMenuIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes sumMenuIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* TODO: Animation do not work with "display: none" property.
+         Can use JavaScript to get around this. */
+/*
+@-webkit-keyframes sumMenuOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes sumMenuOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0
+    }
+}
+*/
+
+/* Site/Page Navigation Bar - END */
+
+/* Header - END */
+
+/* Main Section - START */
+
+#main {
+    padding: 2em 0 0 2em;
+}
+
+/* Home - START */
+
+.jumbotron {
+    background-color: #ECF0F1;
+    border-bottom: 0.0625em solid #3498D8;
+    margin: -2em 0 2em -2em;
+    padding: 4em;
+}
+
+.jumbotron h2 {
+    font-size: 2em;
+}
+
+.jumbotron p, .jumbotron a {
+    font-size: 1.25em;
+}
+
+.jumbotron a { 
+    color: #ECF0F1;
+    background-color: #3498D8;
+    border: 0.0625em solid #2C3E50;
+    border-radius: 0.25em;
+    display: inline-block;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+.jumbotron a:hover {
+    background-color: #2980B9;
+}
+
+/* Home - END */
+
+/* Profile - START */
+
+#about, #social, #interest, #udacity-course, #skill {
+    margin: 0 2em 2em 0;
+}
+
+#social, #interest, #udacity-course, #skill, .about-text {
+    background-color: #ECF0F1;
+    border: 0.0625em solid #3498D8;
+    border-radius: 1em;
+    padding: 1em 2em;
+}
+
+/* Using Flexible Box Layout Model for page layout */
+#profile, #about, .about-text > div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#profile, .about-text > div {
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+}
+
+#about {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+}
+
+#social, #interest, #udacity-course, #skill {
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+        -ms-flex: auto;
+            flex: auto;
+}
+
+.about-text > div > div {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 50%;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+}
+
+.about-text {
+    width: 100%;
+}
+
+.about-text > div {
+    max-width: 800px;
+}
+
+.about-text > div > div {
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.about-img {
+    margin: 0 2em 0 0;
+}
+
+/* Make some fun with the image */
+.about-img img {
+    background-color: #3498D8;
+    border-radius: 50%;
+    height: 200px;
+    padding: 0.0625em;
+    width: 200px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: transform 0.5s;
+            transition: transform 0.5s;
+    /* TODO: Polyfill for "object-fit"" property,
+             as this property is not implemented in IE11 and EDGE. */
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.about-img img:hover {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+    -webkit-transition: transform 0.5s;
+            transition: transform 0.5s;
+}
+
+.label-text {
+    display: inline-block;
+    width: 125px;
+    font-weight: bold;
+}
+
+h2 {
+    color: #2980B9;
+    margin-top: 0;
+}
+
+#social ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#social a {
+    color: #3498D8;
+    text-decoration: none;
+}
+
+#interest ul, #udacity-course ul {
+  padding: 0;
+  list-style: none;
+}
+
+#interest li:before, #udacity-course li:before {
+  color: #3498D8;
+  margin: 0 1em 0 0;
+  content: "\2605";
+}
+
+#skill thead td, #skill thead th {
+    min-width: 80px;
+    width: 200px;
+}
+
+#skill thead th {
+    border-bottom: 0.0625em solid #2C3E50;
+}
+
+#skill tbody th, #skill tbody td {
+    border-top: 1em solid #ECF0F1;
+    text-align: center;
+} 
+
+.color {
+    background-color: #3498D8;
+}
+
+/* Profile - END */
+
+/* Main Section - END */
+
+/* Footer - START */
+
+footer {
+    border-top: 0.25em solid #E74C3C;
+    padding: 2em;
+}
+
+/* Footer - END */

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>KS81 - Lecture Notes | Stage 0</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="Kenneth Soerensen">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header - START -->
+    <header>
+        <h1><a href="index.html">KS81</a></h1>
+
+        <!-- Navigation - START -->
+        <!-- Code info: http://www.w3schools.com/css/css_navbar.asp -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="lectureNotesTOC.html" class="active">Lecture Notes</a>
+                    <ul>
+                        <li><a href="intro.html">Intro</a></li>
+                        <li><a href="stage0.html" class="active">Stage 0</a></li>
+                        <li><a href="stage1.html">Stage 1</a></li>
+                        <li><a href="abbreviations.html">Abbreviations</a></li>
+                        <li><a href="usefullResources.html">Usefull Resources</a></li>
+                        <li><a href="citeResourcesUsed.html">Cite Resources Used</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Navigation - END -->
+
+    </header>
+    <!-- Header - END -->
+
+    <!-- Main Section - START -->
+    <section id="main">
+
+        <!--  - START -->
+        <article id="">
+            <h2>Stage 0</h2>
+            <p>This is the Stage 0 page for the site!</p>
+
+            <!-- Stage 0 - PART START-->
+            <div class="Article">
+                <h2>Stage 0: Getting Started with HTML</h2>
+                <h3>Basic of the Web and html</h3>
+                <p>World wide Web (WWW) consists of HTML pages that uses HyperText Markup Language (HTML) to markup the pages that the web browser interpets and renders to the user.</p>
+                <p>HTML pages are linked together with Hyper Links (links).</p>
+                <p>The web was invented in the early 1990s and have over 30 Billion pages.</p>
+                <p>Examples of files that can be found on the web:</p>
+                <ul>
+                <li>Plain text</li>
+                <li>HTML</li>
+                <li>Images</li>
+                <li>Videos</li>
+                <li>Music</li>
+                </ul>
+                <h4>Major Pieses of the web:</h4>
+                <ul>
+                <li>The user that consist of:
+                    <ul>
+                    <li>Computer</li>
+                    <li>Browser
+                        <ul>
+                        <li>A program that runs on the computer to display files found on the web.</li>
+                        </ul>
+                    </li>
+                    </ul>
+                </li>
+                <li>The Internet
+                    <ul>
+                    <li>The worlds largest computer network.</li>
+                    </ul>
+                </li>
+                <li>Servers
+                    <ul>
+                    <li>Computers that host the files that make up the web.</li>
+                    </ul>
+                </li>
+                <li>The browser communicates with the servers over the internet using HTTP.
+                    <ul>
+                    <li>HTTP - the main protocol of the web.</li>
+                    </ul>
+                </li>
+                </ul>
+                <h4>HTML is mad up of:</h4>
+                <ul>
+                <li>Text content.</li>
+                <li>Markup.</li>
+                <li>References to other documents.</li>
+                <li>Links to other pages.</li>
+                </ul>
+                <h4>HTML Markup</h4>
+                <h5>HTML Tags</h5>
+                <p>&lt;NAME&gt;content&lt;/NAME&gt;</p>
+                <p>Opening Tag: &lt;NAME&gt;<br>
+                Closing Tag: &lt;/NAME&gt;<br>
+                Element Content: content<br>
+                Element: &lt;NAME&gt;content&lt;/NAME&gt; (The HTML element is everything from the Opening Tag to the Closing Tag.)</p>
+                <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>&lt;b&gt;</td>
+                    <td>Defines bold text</td>
+                    <td>This is normal text - &lt;b&gt;and this is bold text&lt;/b&gt;.</td>
+                    <td>This is normal text - <b>and this is bold text</b>.</td>
+                </tr>
+                <tr>
+                    <td>&lt;em&gt;</td>
+                    <td>Defines emphasized text</td>
+                    <td>This is normal text - &lt;em&gt;and this is emphasized text&lt;/em&gt;.</td>
+                    <td>This is normal text - <em>and this is emphasized text</em>.</td>
+                </tr>
+                <tr>
+                    <td>&lt;a&gt;</td>
+                    <td>Defines a hyperlink</td>
+                    <td>&lt;a href=&quot;http://www.udacity.com&quot;&gt;udacity.com&lt;/a&gt;</td>
+                    <td><a href="http://www.udacity.com">udacity.com</a></td>
+                </tr>
+                <tr>
+                    <td>&lt;img&gt;</td>
+                    <td>Defines an image (VOID Tag)</td>
+                    <td>&lt;img src=&quot;http://www.udacity.com/cs253x/hipmunk.png&quot; alt=&quot;hipmunk&quot;&gt;</td>
+                    <td><img src="http://www.udacity.com/cs253x/hipmunk.png" alt="hipmunk"></td>
+                </tr>
+                <tr>
+                    <td>&lt;br&gt;</td>
+                    <td>Defines a single line break (VOID Tag)</td>
+                    <td>Line 1&lt;br&gt;Line 2</td>
+                    <td>Line 1<br>Line 2</td>
+                </tr>
+                <tr>
+                    <td>&lt;p&gt;</td>
+                    <td>Defines a single line break (VOID Tag)</td>
+                    <td>&lt;p&gt;Paragraph 1&lt;/p&gt;&lt;p&gt;Paragraph 2&lt;/p&gt;</td>
+                    <td><p>Paragraph 1</p><p>Paragraph 2</p></td>
+                </tr>
+                <tr>
+                    <td>&lt;div&gt;</td>
+                    <td>Defines a section in a document<br>
+                    The tag defines a division or a section in an HTML document.<br>
+                    The tag is used to group block-elements to format them with CSS.
+                    </td>
+                    <td>&lt;div&gt;&lt;p&gt;Paragraph 1&lt;/p&gt;&lt;p&gt;Paragraph 2&lt;/p&gt;&lt;/div&gt;</td>
+                    <td><div><p>Paragraph 1</p><p>Paragraph 2</p></div></td>
+                </tr>
+                <tr>
+                    <td>&lt;span&gt;</td>
+                    <td>Defines a section in a document<br>
+                    The tag is used to group inline-elements in a document.<br>
+                    The tag provides no visual change by itself.<br>
+                    The tag provides a way to add a hook to a part of a text or a part of a document.</td>
+                    <td>&lt;p&gt;Paragraph &lt;span&gt;text&lt;/span&gt;&lt;/p&gt;</td>
+                    <td><p>Paragraph <span>text</span></p></td>
+                </tr>
+                </table>
+                <h5>HTML Attributes</h5>
+                <p>&lt;TAG ATTR=&quot;value&quot;&gt;Content&lt;/TAG&gt;</p>
+                <p>Example: &lt;a href=&quot;http://www.udacity.com&quot;&gt;udacity.com&lt;/a&gt;<br>
+                Attribute Name: href<br>
+                Attribute Value: http://www.udacity.com</p>
+                <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>href</td>
+                    <td>Specifies the URL of the page the link goes to.</td>
+                    <td>&lt;a href=&quot;http://www.udacity.com&quot;&gt;udacity.com&lt;/a&gt;</td>
+                </tr>
+                <tr>
+                    <td>src</td>
+                    <td>Specifies the URL of the media file.</td>
+                    <td>&lt;img src=&quot;image.jpg&quot;&gt;</td>
+                </tr>
+                <tr>
+                    <td>alt</td>
+                    <td>Specifies an alternate text when the original element fails to display.</td>
+                    <td>&lt;img src=&quot;image.jpg&quot; alt=&quot;This is an image&quot;&gt;</td>
+                </tr>
+                </table>
+                <h5>Inline vs Block</h5>
+                <p>Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.</p>
+                <h6>Block-level Elements</h6>
+                <p>A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).</p>
+                <p>Examples of block-level elements:
+                <ul>
+                    <li>&lt;div&gt;</li>
+                    <li>&lt;h1&gt; - &lt;h6&gt;</li>
+                    <li>&lt;p&gt;</li>
+                    <li>&lt;form&gt;</li>
+                </ul>
+                </p>
+                <h6>Inline Elements</h6>
+                <p>An inline element does not start on a new line and only takes up as much width as necessary.</p>
+                <p>Examples of block-level elements:
+                <ul>
+                    <li>&lt;span&gt;</li>
+                    <li>&lt;a&gt;</li>
+                    <li>&lt;img&gt;</li>
+                </ul>
+                </p>
+            </div>
+            <!-- Stage 0 - PART END-->
+
+        </article>
+        <!--  - END -->
+
+    </section>
+    <!-- Main Section - END -->
+
+    <!-- Footer - START -->
+    <footer>
+        <p>&copy; Copyright 2016 Kenneth Soerensen</p>
+    </footer>
+    <!-- Footer - END -->
+
+</body>
+
+</html>
