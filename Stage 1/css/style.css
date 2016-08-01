@@ -9,6 +9,23 @@ header, footer{
     background-color: #2C3E50;
 }
 
+h2, h3 {
+    color: #2980B9;
+}
+
+a {
+    color: #3498D8;
+    text-decoration: none;
+}
+
+article section {
+    background-color: #ECF0F1;
+    border: 0.0625em solid #3498D8;
+    border-radius: 1em;
+    margin-top: 2em;
+    padding: 1em;
+}
+
 /* General style info - END */
 
 /* Header - START */
@@ -161,19 +178,22 @@ nav li ul li {
 /* Main Section - START */
 
 #main {
-    padding: 2em 0 0 2em;
+    padding: 2em;
 }
 
 /* Home - START */
 
 .jumbotron {
     background-color: #ECF0F1;
+    border-style: none;
     border-bottom: 0.0625em solid #3498D8;
-    margin: -2em 0 2em -2em;
+    border-radius: 0; 
+    margin: -2em -2em 2em -2em;
     padding: 4em;
 }
 
 .jumbotron h2 {
+    margin-top: 0;
     font-size: 2em;
 }
 
@@ -198,6 +218,10 @@ nav li ul li {
 /* Home - END */
 
 /* Profile - START */
+
+#profile {
+    margin: 0 -2em -2em 0;
+}
 
 #about, #social, #interest, #udacity-course, #skill {
     margin: 0 2em 2em 0;
@@ -295,8 +319,14 @@ nav li ul li {
     font-weight: bold;
 }
 
-h2 {
-    color: #2980B9;
+#profile #about {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+#social h2, #interest h2, #udacity-course h2, #skill h2, .about-text h2 {
     margin-top: 0;
 }
 
