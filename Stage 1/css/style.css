@@ -26,6 +26,10 @@ article section {
     padding: 1em;
 }
 
+table {
+    border-collapse: collapse;
+}
+
 /* General style info - END */
 
 /* Header - START */
@@ -371,6 +375,20 @@ nav li ul li {
 }
 
 /* Profile - END */
+
+/* Abbreviations - Start */
+
+#abbr th {
+    min-width: 100px;
+}
+
+#abbr th, #abbr td {
+    border-bottom: 0.0625em dashed #3498D8;
+    padding: 0.5em;
+    text-align: left;
+}
+
+/* Abbreviations - Start */
 
 /* Main Section - END */
 
