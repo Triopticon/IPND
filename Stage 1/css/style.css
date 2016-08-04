@@ -392,14 +392,14 @@ nav li ul li {
 
 /* Stage 0 - START */
 
-#stage-0 th, #stage-0 td {
+#stage0 th, #stage0 td {
     border-bottom: 0.0625em dashed #3498D8;
     border-right: 0.0625em dashed #3498D8;
     padding: 0.5em;
     text-align: left;
 }
 
-#stage-0 th:last-of-type, #stage-0 td:last-of-type {
+#stage0 th:last-of-type, #stage0 td:last-of-type {
     border-right: none;
 }
 
