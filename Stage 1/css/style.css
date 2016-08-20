@@ -30,6 +30,14 @@ table {
     border-collapse: collapse;
 }
 
+pre, code {
+    background-color: white;
+}
+
+pre {
+    padding: 0 1em;
+}
+
 /* General style info - END */
 
 /* Header - START */
@@ -382,6 +390,10 @@ nav li ul li {
     min-width: 100px;
 }
 
+#abbr td {
+    min-width: 200px;
+}
+
 #abbr th, #abbr td {
     border-bottom: 0.0625em dashed #3498D8;
     padding: 0.5em;
@@ -404,6 +416,69 @@ nav li ul li {
 }
 
 /* Stage 0 - END */
+
+/* Stage 1 - START */
+
+.BoxModelContainer {
+    width: 330px;
+    margin: 0 auto;
+}
+
+.BoxModelMargine {
+    background-color: #F8CB9C;
+    width: 250px;
+    height: 250px;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+.BoxModelBorderPadding {
+    background-color: #C1CD89;
+    border: 5px solid #feedbb;
+    padding: 20px;
+}
+
+.BoxModelContent {
+    background-color: #8AB3BF;
+}
+
+.BoxModelBorderPadding, .BoxModelContent {
+    width: 200px;
+    height: 200px;
+}
+
+#BoxModel ul {
+    padding: 0;
+    list-style: none;
+}
+
+.marginColor:before, .borderColor:before, .paddingColor:before, .contentColor:before {
+    margin: 0 .5em 0 0;
+    content: "";
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: -.2em;
+}
+
+.marginColor:before {
+    background-color: #F8CB9C;
+}
+
+.borderColor:before {
+    background-color: #FEEDBB;
+}
+
+.paddingColor:before {
+    background-color: #C1CD89;
+}
+
+.contentColor:before {
+    background-color: #8AB3BF;
+}
+
+/* Stage 1 - END */
 
 /* Main Section - END */
 
