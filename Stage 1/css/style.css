@@ -6,23 +6,23 @@ body {
 
 header,
 footer{
-    color: #ECF0F1;
-    background-color: #2C3E50;
+    color: #ecf0f1;
+    background-color: #2c3e50;
 }
 
 h2,
 h3 {
-    color: #2980B9;
+    color: #2980b9;
 }
 
 a {
-    color: #3498D8;
+    color: #3498d8;
     text-decoration: none;
 }
 
 article section {
-    background-color: #ECF0F1;
-    border: 0.0625em solid #3498D8;
+    background-color: #ecf0f1;
+    border: 0.0625em solid #3498d8;
     border-radius: 1em;
     margin-top: 2em;
     padding: 1em;
@@ -46,7 +46,7 @@ pre {
 /* Header - START */
 
 header {
-    border-bottom: 0.25em solid #E74C3C;
+    border-bottom: 0.25em solid #e74c3c;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -61,14 +61,14 @@ h1 {
 }
 
 h1 a {
-    color: #ECF0F1;
+    color: #ecf0f1;
     text-decoration: none;
     -webkit-transition: text-shadow 0.5s;
             transition: text-shadow 0.5s;
 }
 
 h1 a:hover {
-    text-shadow: 0.3125em 0.3125em #E74C3C;
+    text-shadow: 0.3125em 0.3125em #e74c3c;
 }
 
 /* Site/Page Logo - END */
@@ -89,7 +89,7 @@ nav li {
     min-width: 150px;
 }
 nav li a {
-    color: #ECF0F1;
+    color: #ecf0f1;
     display: block;
     padding: 1em 0;
     text-align: center;
@@ -109,12 +109,12 @@ nav li a {
 }
 
 nav li a:hover:not(.active) {
-    color: #2C3E50;
-    background-color: #ECF0F1;
+    color: #2c3e50;
+    background-color: #ecf0f1;
 }
 
 nav a.active {
-    background-color: #E74C3C;
+    background-color: #e74c3c;
 }
 
 /* Dropdown Submenu (1 level deep) */
@@ -199,9 +199,9 @@ nav li ul li {
 /* Home - START */
 
 .jumbotron {
-    background-color: #ECF0F1;
+    background-color: #ecf0f1;
     border-style: none;
-    border-bottom: 0.0625em solid #3498D8;
+    border-bottom: 0.0625em solid #3498d8;
     border-radius: 0; 
     margin: -2em -2em 2em -2em;
     padding: 4em;
@@ -217,9 +217,9 @@ nav li ul li {
 }
 
 .jumbotron a { 
-    color: #ECF0F1;
-    background-color: #3498D8;
-    border: 0.0625em solid #2C3E50;
+    color: #ecf0f1;
+    background-color: #3498d8;
+    border: 0.0625em solid #2c3e50;
     border-radius: 0.25em;
     display: inline-block;
     padding: 0.5em;
@@ -227,7 +227,7 @@ nav li ul li {
 }
 
 .jumbotron a:hover {
-    background-color: #2980B9;
+    background-color: #2980b9;
 }
 
 /* Home - END */
@@ -251,8 +251,8 @@ nav li ul li {
 #udacity-course,
 #skill,
 .about-text {
-    background-color: #ECF0F1;
-    border: 0.0625em solid #3498D8;
+    background-color: #ecf0f1;
+    border: 0.0625em solid #3498d8;
     border-radius: 1em;
     padding: 1em 2em;
 }
@@ -320,7 +320,7 @@ nav li ul li {
 
 /* Make some fun with the image */
 .about-img img {
-    background-color: #3498D8;
+    background-color: #3498d8;
     border-radius: 50%;
     height: 200px;
     padding: 0.0625em;
@@ -370,7 +370,7 @@ nav li ul li {
 }
 
 #social a {
-    color: #3498D8;
+    color: #3498d8;
     text-decoration: none;
 }
 
@@ -381,7 +381,7 @@ nav li ul li {
 
 #interest li:before,
 #udacity-course li:before {
-  color: #3498D8;
+  color: #3498d8;
   margin: 0 1em 0 0;
   content: "\2605";
 }
@@ -393,17 +393,17 @@ nav li ul li {
 }
 
 #skill thead th {
-    border-bottom: 0.0625em solid #2C3E50;
+    border-bottom: 0.0625em solid #2c3e50;
 }
 
 #skill tbody th,
 #skill tbody td {
-    border-top: 1em solid #ECF0F1;
+    border-top: 1em solid #ecf0f1;
     text-align: center;
 } 
 
 .color {
-    background-color: #3498D8;
+    background-color: #3498d8;
 }
 
 /* Profile - END */
@@ -420,7 +420,7 @@ nav li ul li {
 
 #abbr th,
 #abbr td {
-    border-bottom: 0.0625em dashed #3498D8;
+    border-bottom: 0.0625em dashed #3498d8;
     padding: 0.5em;
     text-align: left;
 }
@@ -431,8 +431,8 @@ nav li ul li {
 
 #stage0 th,
 #stage0 td {
-    border-bottom: 0.0625em dashed #3498D8;
-    border-right: 0.0625em dashed #3498D8;
+    border-bottom: 0.0625em dashed #3498d8;
+    border-right: 0.0625em dashed #3498d8;
     padding: 0.5em;
     text-align: left;
 }
@@ -452,7 +452,7 @@ nav li ul li {
 }
 
 .BoxModelMargine {
-    background-color: #F8CB9C;
+    background-color: #f8cb9c;
     width: 250px;
     height: 250px;
     padding: 40px;
@@ -460,13 +460,13 @@ nav li ul li {
 }
 
 .BoxModelBorderPadding {
-    background-color: #C1CD89;
+    background-color: #c1cd89;
     border: 5px solid #feedbb;
     padding: 20px;
 }
 
 .BoxModelContent {
-    background-color: #8AB3BF;
+    background-color: #8ab3bf;
 }
 
 .BoxModelBorderPadding,
@@ -494,19 +494,19 @@ nav li ul li {
 }
 
 .marginColor:before {
-    background-color: #F8CB9C;
+    background-color: #f8cb9c;
 }
 
 .borderColor:before {
-    background-color: #FEEDBB;
+    background-color: #feedbb;
 }
 
 .paddingColor:before {
-    background-color: #C1CD89;
+    background-color: #c1cd89;
 }
 
 .contentColor:before {
-    background-color: #8AB3BF;
+    background-color: #8ab3bf;
 }
 
 /* Stage 1 - END */
@@ -516,7 +516,7 @@ nav li ul li {
 /* Footer - START */
 
 footer {
-    border-top: 0.25em solid #E74C3C;
+    border-top: 0.25em solid #e74c3c;
     padding: 2em;
 }
 
