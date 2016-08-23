@@ -142,6 +142,18 @@ nav li ul li {
     float: none;
 }
 
+/* CSS validator failes when this browser prefixed property is used.
+   Should we not use browser prefixed properties in producrion code?
+   see more her: https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix
+
+   Browser vendors sometimes add prefixes to experimental or nonstandard CSS
+   properties, so developers can experiment but changes in browser behavior don't
+   break the code during the standards process. Developers should wait to include
+   the unprefixed property until browser behavior is standardized.
+
+   TODO: Learn more about using browser prefixes, and find out how to get rid of W3C
+   as they are a BIG roadblock in the future of web - LOL :-D :-p.
+
 @-webkit-keyframes sumMenuIn {
     from {
         opacity: 0;
@@ -151,6 +163,7 @@ nav li ul li {
         opacity: 1
     }
 }
+*/
 
 @keyframes sumMenuIn {
     from {
