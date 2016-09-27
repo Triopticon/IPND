@@ -34,3 +34,21 @@ tuple, and ___4___ or can be more complicated such as objects and lambda functio
 # How can you adapt that design to work with numbered blanks?
 
 # If you need help, you can sign up for a 1 on 1 coaching appointment: https://calendly.com/ipnd1-1/20min/
+
+def welcome():
+    print """
+#################################################
+#                                               #
+#   Welcome to ks81's Fill-in-the-Blanks quiz   #
+#                   a game by                   #
+#               Kenneth Soerensen               #
+#                                               #
+#################################################
+
+"""
+
+def main():
+
+    welcome()
+
+main()
