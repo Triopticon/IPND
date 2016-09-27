@@ -1,3 +1,4 @@
+import os
 # IPND Stage 2 Final Project
 
 # You've built a Mad-Libs game with some help from Sean.
@@ -35,6 +36,15 @@ tuple, and ___4___ or can be more complicated such as objects and lambda functio
 
 # If you need help, you can sign up for a 1 on 1 coaching appointment: https://calendly.com/ipnd1-1/20min/
 
+#----------------------------------
+# ks81's Fill-in-the-Blanks quiz
+#
+# Developer: Kenneth Soerensen
+# copyright: 2016 Kenneth Soerensen
+#
+#----------------------------------
+
+
 def welcome():
     print """
 #################################################
@@ -47,8 +57,28 @@ def welcome():
 
 """
 
+def get_username():
+    username = raw_input("Please enter your name?" + os.linesep)
+
+    if username == "":
+        username = "NoName"
+
+    print os.linesep + "Hello " + username
+    
+    if raw_input("Is this correct? (y/n)" + os.linesep).lower() == 'n':
+        username = get_username()
+
+    return username
+
+
 def main():
 
-    welcome()
+    username = ""
 
-main()
+    welcome()
+    username = get_username()
+
+print __name__
+
+if __name__ == "__main__":
+    main()
