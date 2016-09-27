@@ -71,14 +71,47 @@ def get_username():
     return username
 
 
+def get_difficulty_level(username):
+    print os.linesep + username + """ please select a game difficulty by typing it in!
+Possible choices includes (e)asy, (m)edium, and (h)ard."""
+
+    difficulty_level = ""
+
+    # Convert input to lowercase for ease of use. 
+    user_input = raw_input("What is your choise?" + os.linesep).lower()
+
+    if user_input == "":
+        print "You did not correctly choose your difficulty level"
+        return get_difficulty_level()
+        
+    if (user_input[0] == 'e'):
+        difficulty_level = "easy"
+        print "You have choosen EASY as your difficulty level"
+
+    elif user_input[0] == 'm':
+        difficulty_level = "medium"
+        print "You have choosen MEDIUM as your difficulty level"
+
+    elif user_input[0] == 'h':
+        difficulty_level = "hard"
+        print "You have choosen HARD as your difficulty level"
+
+    else:
+        print "You did not correctly choose your difficulty level"
+        difficulty_level = get_difficulty_level()
+
+    return difficulty_level
+
+
 def main():
 
     username = ""
+    difficulty_level = ""
 
     welcome()
     username = get_username()
+    ifficulty_level = get_difficulty_level(username)
 
-print __name__
 
 if __name__ == "__main__":
     main()
