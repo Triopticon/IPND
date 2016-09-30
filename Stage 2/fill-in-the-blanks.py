@@ -71,46 +71,65 @@ def get_username():
     return username
 
 
+def difficulty(level):
+    if level.lower() == "easy":
+        return 0
+    elif level.lower() == "medium":
+        return 1
+    elif level.lower() == "hard":
+        return 2
+    # Could have returned/raised an error, but for this project we just return 0 for easy.
+    else:
+        return 0
+
+
 def get_difficulty_level(username):
     print os.linesep + username + """ please select a game difficulty by typing it in!
+Use full word or first letter.
 Possible choices includes (e)asy, (m)edium, and (h)ard."""
 
-    difficulty_level = ""
+    difficulty_level = None
 
     # Convert input to lowercase for ease of use. 
     user_input = raw_input("What is your choise?" + os.linesep).lower()
 
+    difficulty_level_text = ["EASY", "MEDIUM", "HARD"]
+    feedback_text = os.linesep + "You have choosen LVL as your difficulty level"
+
     if user_input == "":
-        print "You did not correctly choose your difficulty level"
-        return get_difficulty_level()
+        print os.linesep + "You did not correctly choose your difficulty level"
+        return get_difficulty_level(username)
         
     if (user_input[0] == 'e'):
-        difficulty_level = "easy"
-        print "You have choosen EASY as your difficulty level"
+        difficulty_level = difficulty("easy")
+        print feedback_text.replace("LVL", difficulty_level_text[difficulty_level])
 
     elif user_input[0] == 'm':
-        difficulty_level = "medium"
-        print "You have choosen MEDIUM as your difficulty level"
+        difficulty_level = difficulty("medium")
+        print feedback_text.replace("LVL", difficulty_level_text[difficulty_level])
 
     elif user_input[0] == 'h':
-        difficulty_level = "hard"
-        print "You have choosen HARD as your difficulty level"
+        difficulty_level = difficulty("hard")
+        print feedback_text.replace("LVL", difficulty_level_text[difficulty_level])
 
     else:
-        print "You did not correctly choose your difficulty level"
-        difficulty_level = get_difficulty_level()
+        print os.linesep + "You did not correctly choose your difficulty level"
+        difficulty_level = get_difficulty_level(username)
 
     return difficulty_level
 
 
-def main():
-
+def game():
     username = ""
-    difficulty_level = ""
+    difficulty_level = None
 
     welcome()
     username = get_username()
-    ifficulty_level = get_difficulty_level(username)
+    difficulty_level = get_difficulty_level(username)
+
+
+def main():
+    game()
 
 
 if __name__ == "__main__":
