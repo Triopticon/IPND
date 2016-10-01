@@ -65,6 +65,8 @@ def get_username():
 
     print os.linesep + "Hello " + username
     
+    # We only care if the user enter n for No, other input is regarded as Yes.
+    # You can than just click "Enter" if you want to continue.
     if raw_input("Is this correct? (y/n)" + os.linesep).lower() == 'n':
         username = get_username()
 
@@ -78,9 +80,10 @@ def difficulty(level):
         return 1
     elif level.lower() == "hard":
         return 2
+    
+    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
     # Could have returned/raised an error, but for this project we just return 0 for easy.
-    else:
-        return 0
+    return 0
 
 
 def get_difficulty_level(username):
@@ -120,14 +123,37 @@ Possible choices includes (e)asy, (m)edium, and (h)ard."""
 
 
 def get_number_of_guesses(difficulty_level):
-    if difficulty_level == 0:
+    if difficulty_level == difficulty("easy"):
         return 5
-    elif difficulty_level == 1:
+    elif difficulty_level == difficulty("medium"):
         return 4
-    elif difficulty_level == 2:
+    elif difficulty_level == ifficulty("hard"):
         return 3
-    else:
-        return 5
+    
+    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
+    # Could have returned/raised an error, but for this project we just return 5 guesses for easy.
+    return 5
+
+
+def get_fill_in_the_blank_text(difficulty_level):
+
+    easy_fill_in_the_blank_text = """A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
+adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
+don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
+tuple, and ___4___ or can be more complicated such as objects and lambda functions."""
+
+    if difficulty_level == difficulty("easy"):
+        return easy_fill_in_the_blank_text
+
+    elif difficulty_level == difficulty("medium"):
+        return "medium"
+    elif difficulty_level == ifficulty("hard"):
+        return "hard"
+
+    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
+    # Could have returned/raised an error, but for this project we just return the fill_in_the_blank text for easy.
+    return easy_fill_in_the_blank_text
+
 
 def game():
     username = ""
@@ -139,7 +165,7 @@ def game():
     difficulty_level = get_difficulty_level(username)
     number_of_guesses = get_number_of_guesses(difficulty_level)
     print os.linesep + "You will get %s guesses per problem." % (number_of_guesses) + os.linesep
-
+    print get_fill_in_the_blank_text(difficulty_level)
 
 def main():
     game()
