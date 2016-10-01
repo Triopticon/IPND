@@ -119,13 +119,26 @@ Possible choices includes (e)asy, (m)edium, and (h)ard."""
     return difficulty_level
 
 
+def get_number_of_guesses(difficulty_level):
+    if difficulty_level == 0:
+        return 5
+    elif difficulty_level == 1:
+        return 4
+    elif difficulty_level == 2:
+        return 3
+    else:
+        return 5
+
 def game():
     username = ""
     difficulty_level = None
+    number_of_guesses = None
 
     welcome()
     username = get_username()
     difficulty_level = get_difficulty_level(username)
+    number_of_guesses = get_number_of_guesses(difficulty_level)
+    print os.linesep + "You will get %s guesses per problem." % (number_of_guesses) + os.linesep
 
 
 def main():
