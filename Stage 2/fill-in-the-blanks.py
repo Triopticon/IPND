@@ -65,7 +65,7 @@ def get_username():
 
     print os.linesep + "Hello " + username
     
-    # We only care if the user enter n for No, other input is regarded as Yes.
+    # We only care if the user enter "n" for No, other input is regarded as Yes.
     # You can than just click "Enter" if you want to continue.
     if raw_input("Is this correct? (y/n)" + os.linesep).lower() == 'n':
         username = get_username()
@@ -120,6 +120,19 @@ Possible choices includes (e)asy, (m)edium, and (h)ard."""
         difficulty_level = get_difficulty_level(username)
 
     return difficulty_level
+
+
+def get_quiz_blanks(difficulty_level):
+    if difficulty_level == difficulty("easy"):
+        return ["___1___", "___2___", "___3___", "___4___"]
+    elif difficulty_level == difficulty("medium"):
+        return ["___1___", "___2___", "___3___", "___4___", "___5___"]
+    elif difficulty_level == ifficulty("hard"):
+        return ["___1___", "___2___", "___3___", "___4___", "___5___", "___6___"]
+        
+    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
+    # Could have returned/raised an error, but for this project we just return quiz blanks for easy.
+    return ["___1___", "___2___", "___3___", "___4___"]
 
 
 def get_number_of_guesses(difficulty_level):
