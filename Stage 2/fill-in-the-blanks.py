@@ -72,10 +72,12 @@ def get_username_from_user():
 
     return username
 
+def difficulty_index_list():
+ return ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
 
 def difficulty(level):
 
-    index_list = ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
+    index_list = difficulty_index_list()
 
     for index in index_list:
         if level.lower() in index:
@@ -89,7 +91,7 @@ def get_difficulty_level_from_user(username):
 Use full word or first letter.
 Possible choices includes (e)asy, (m)edium, (h)ard, (v)ery hard, (u)ltra hard and (c)ustom."""
 
-    index_list = ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
+    index_list = difficulty_index_list()
     user_input_check_list = ["c", "e", "m", "h", "v", "u"]
     difficulty_level_text = ["CUSTOM", "EASY", "MEDIUM", "HARD", "VERY HARD", "ULTRA HARD"]
 
