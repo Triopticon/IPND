@@ -74,54 +74,38 @@ def get_username_from_user():
 
 
 def difficulty(level):
-    if level.lower() == "easy":
-        return 0
 
-    elif level.lower() == "medium":
-        return 1
+    index_list = ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
 
-    elif level.lower() == "hard":
-        return 2
+    for index in index_list:
+        if level.lower() in index:
+            return index_list.index(index)
     
-    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
-    # Could have returned/raised an error, but for this project we just return 0 for easy.
-    return 0
+    return index_list.index("easy")
 
 
-def get_difficulty_level(username):
+def get_difficulty_level_from_user(username):
     print os.linesep + username + """ please select a game difficulty by typing it in!
 Use full word or first letter.
-Possible choices includes (e)asy, (m)edium, and (h)ard."""
+Possible choices includes (e)asy, (m)edium, (h)ard, (v)ery hard, (u)ltra hard and (c)ustom."""
 
-    difficulty_level = None
+    index_list = ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
+    user_input_check_list = ["c", "e", "m", "h", "v", "u"]
+    difficulty_level_text = ["CUSTOM", "EASY", "MEDIUM", "HARD", "VERY HARD", "ULTRA HARD"]
 
     # Convert input to lowercase for ease of use. 
     user_input = raw_input("What is your choise?" + os.linesep).lower()
 
-    difficulty_level_text = ["EASY", "MEDIUM", "HARD"]
-    feedback_text = os.linesep + "You have choosen LVL as your difficulty level"
+    if user_input in user_input_check_list:
+        difficulty_level = difficulty(index_list[user_input_check_list.index(user_input[0])])
+        print os.linesep + "You have choosen %s as your difficulty level" % (difficulty_level_text[difficulty_level])
+        return difficulty_level
 
-    if user_input == "":
-        print os.linesep + "You did not correctly choose your difficulty level"
-        return get_difficulty_level(username)
-        
-    if (user_input[0] == 'e'):
-        difficulty_level = difficulty("easy")
-        print feedback_text.replace("LVL", difficulty_level_text[difficulty_level])
+    print os.linesep + "You did not correctly choose your difficulty level"
+    return get_difficulty_level_from_user(username)
 
-    elif user_input[0] == 'm':
-        difficulty_level = difficulty("medium")
-        print feedback_text.replace("LVL", difficulty_level_text[difficulty_level])
 
-    elif user_input[0] == 'h':
-        difficulty_level = difficulty("hard")
-        print feedback_text.replace("LVL", difficulty_level_text[difficulty_level])
 
-    else:
-        print os.linesep + "You did not correctly choose your difficulty level"
-        difficulty_level = get_difficulty_level(username)
-
-    return difficulty_level
 
 
 def get_quiz_blanks(difficulty_level):
@@ -182,9 +166,12 @@ def game():
     
     welcome()
     username = get_username_from_user()
-    difficulty_level = get_difficulty_level(username)
     
-    print os.linesep + "You will get %s guesses per problem." % (get_number_of_guesses(difficulty_level)) + os.linesep
+    difficulty_level = get_difficulty_level_from_user(username)
+
+    print difficulty_level
+    
+    #print os.linesep + "You will get %s guesses per problem." % (get_number_of_guesses(difficulty_level)) + os.linesep
     
 
 def main():
