@@ -57,8 +57,8 @@ def welcome():
 
 """
 
-def get_username():
-    username = raw_input("Please enter your name?" + os.linesep)
+def get_username_from_user():
+    username = raw_input("Please enter your name? ")
 
     if username == "":
         username = "NoName"
@@ -67,8 +67,8 @@ def get_username():
     
     # We only care if the user enter "n" for No, other input is regarded as Yes.
     # You can than just click "Enter" if you want to continue.
-    if raw_input("Is this correct? (y/n)" + os.linesep).lower() == 'n':
-        username = get_username()
+    if raw_input("Is this correct? (y/n) " ).lower() == 'n':
+        username = get_username_from_user()
 
     return username
 
@@ -76,8 +76,10 @@ def get_username():
 def difficulty(level):
     if level.lower() == "easy":
         return 0
+
     elif level.lower() == "medium":
         return 1
+
     elif level.lower() == "hard":
         return 2
     
@@ -125,8 +127,10 @@ Possible choices includes (e)asy, (m)edium, and (h)ard."""
 def get_quiz_blanks(difficulty_level):
     if difficulty_level == difficulty("easy"):
         return ["___1___", "___2___", "___3___", "___4___"]
+
     elif difficulty_level == difficulty("medium"):
         return ["___1___", "___2___", "___3___", "___4___", "___5___"]
+
     elif difficulty_level == ifficulty("hard"):
         return ["___1___", "___2___", "___3___", "___4___", "___5___", "___6___"]
         
@@ -138,8 +142,10 @@ def get_quiz_blanks(difficulty_level):
 def get_number_of_guesses(difficulty_level):
     if difficulty_level == difficulty("easy"):
         return 5
+
     elif difficulty_level == difficulty("medium"):
         return 4
+
     elif difficulty_level == ifficulty("hard"):
         return 3
     
@@ -148,15 +154,15 @@ def get_number_of_guesses(difficulty_level):
     return 5
 
 
-def get_fill_in_the_blank_text(difficulty_level):
+def get_quiz_text(difficulty_level):
 
-    easy_fill_in_the_blank_text = """A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
+    easy_quiz_text = """A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
 adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
 don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
 tuple, and ___4___ or can be more complicated such as objects and lambda functions."""
 
     if difficulty_level == difficulty("easy"):
-        return easy_fill_in_the_blank_text
+        return easy_quiz_text
 
     elif difficulty_level == difficulty("medium"):
         return "medium"
@@ -165,20 +171,21 @@ tuple, and ___4___ or can be more complicated such as objects and lambda functio
 
     # Just to be on the safe side, but can make it harder to spot a bug/error this way.
     # Could have returned/raised an error, but for this project we just return the fill_in_the_blank text for easy.
-    return easy_fill_in_the_blank_text
+    return easy_quiz_text
+
+
 
 
 def game():
     username = ""
     difficulty_level = None
-    number_of_guesses = None
-
+    
     welcome()
-    username = get_username()
+    username = get_username_from_user()
     difficulty_level = get_difficulty_level(username)
-    number_of_guesses = get_number_of_guesses(difficulty_level)
-    print os.linesep + "You will get %s guesses per problem." % (number_of_guesses) + os.linesep
-    print get_fill_in_the_blank_text(difficulty_level)
+    
+    print os.linesep + "You will get %s guesses per problem." % (get_number_of_guesses(difficulty_level)) + os.linesep
+    
 
 def main():
     game()
