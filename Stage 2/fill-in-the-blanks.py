@@ -235,6 +235,21 @@ def quiz_blank_in_pos(word, quiz_blank):
     return None
 
 
+def replace_word(quiz_text, quiz_blank, user_quiz_answer):
+
+    replaced_quiz_text = []
+
+    for word in quiz_text:
+        replacement = quiz_blank_in_pos(word, quiz_blank)
+        if replacement != None:
+            word = word.replace(replacement, user_quiz_answer)
+            replaced_quiz_text.append(word)
+        else:
+            replaced_quiz_text.append(word)
+
+    return replaced_quiz_text
+
+
 def game():
     username = ""
     difficulty_level = None
