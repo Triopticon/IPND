@@ -288,6 +288,37 @@ def game_over():
     exit()
 
 
+def game_loop(difficulty_level):
+    number_of_guesses_left = None
+    quiz_text = None
+    quiz_answers = None
+    quiz_blanks = None
+
+    number_of_guesses_left = get_number_of_guesses(difficulty_level)
+    quiz_text, quiz_answers, quiz_blanks = get_quiz(difficulty_level)
+
+    print "The current paragraph reads as such:"
+    print quiz_text
+
+    quiz_text = quiz_text.split()
+
+    count = 0
+    for quiz_answer in quiz_answers:
+
+        number_of_guesses_left = get_user_quiz_answer(quiz_blanks[count], quiz_answer, number_of_guesses_left)
+
+        if number_of_guesses_left < 1:
+            game_over()
+
+        quiz_text = replace_word(quiz_text, quiz_blanks[count], quiz_answer)
+
+        print os.linesep * 2 +  " ".join(quiz_text)
+
+        count += 1
+
+    won()
+
+
 def game():
     username = ""
     difficulty_level = None
