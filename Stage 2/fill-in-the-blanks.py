@@ -250,6 +250,30 @@ def replace_word(quiz_text, quiz_blank, user_quiz_answer):
     return replaced_quiz_text
 
 
+def get_user_quiz_answer(quiz_blank, quiz_answer, number_of_guesses_left):
+
+    while True:
+        user_input = raw_input(os.linesep + "What should be substituted in for " + quiz_blank + "? ")
+
+        if not user_input.lower() == quiz_answer.lower():
+            number_of_guesses_left -= 1
+            user_feedback_text = os.linesep * 2 + "That isn't the correct answer! You only have %s try left!" % (number_of_guesses_left)
+
+            if number_of_guesses_left > 1:
+                print user_feedback_text
+
+            elif number_of_guesses_left == 1:
+                print user_feedback_text + " Make it count!"
+
+            else:
+                break
+
+        else:
+            break
+
+    return number_of_guesses_left
+
+
 def game():
     username = ""
     difficulty_level = None
