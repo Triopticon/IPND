@@ -274,7 +274,7 @@ def get_user_quiz_answer(quiz_blank, quiz_answer, number_of_guesses_left):
     return number_of_guesses_left
 
 
-def win(username):
+def won(username):
     print "WOW Congratulations! You got all questions correct!"
 
     if raw_input(username + " would you like to play again? (y/n)" + os.linesep).lower() == 'y': 
@@ -288,15 +288,19 @@ def game_over():
     exit()
 
 
-def game_loop(difficulty_level):
+def game_loop(username):
     number_of_guesses_left = None
-    quiz_text = None
-    quiz_answers = None
-    quiz_blanks = None
+    quiz_text= ""
+    quiz_answers = []
+    quiz_blanks = []
+
+    difficulty_level = get_game_difficulty_level_from_user(username)
 
     number_of_guesses_left = get_number_of_guesses(difficulty_level)
-    quiz_text, quiz_answers, quiz_blanks = get_quiz(difficulty_level)
-
+    quiz_text, quiz_answers, quiz_blanks = get_quiz(difficulty_level, username, get_quiz_text_and_answer())
+    
+    print os.linesep + "You will get %s guesses per problem." % (number_of_guesses_left) + os.linesep
+    
     print "The current paragraph reads as such:"
     print quiz_text
 
@@ -316,27 +320,16 @@ def game_loop(difficulty_level):
 
         count += 1
 
-    won()
+    won(username)
 
 
 def game():
     username = ""
-    difficulty_level = None
-    number_of_guesses = None
-    quiz_text= ""
-    quiz_answer = []
-    quiz_blanks = []
     
     welcome()
     username = get_username_from_user()
-    
-    difficulty_level = get_game_difficulty_level_from_user(username)
 
-    number_of_guesses = get_number_of_guesses(difficulty_level)
-
-    print os.linesep + "You will get %s guesses per problem." % (number_of_guesses) + os.linesep
-    
-    quiz_text, quiz_answer, quiz_blanks = get_quiz(difficulty_level, username, get_quiz_text_and_answer())
+    game_loop(username)
 
 
 def main():
