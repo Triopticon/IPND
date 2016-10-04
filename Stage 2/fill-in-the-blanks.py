@@ -274,6 +274,15 @@ def get_user_quiz_answer(quiz_blank, quiz_answer, number_of_guesses_left):
     return number_of_guesses_left
 
 
+def win(username):
+    print "WOW Congratulations! You got all questions correct!"
+
+    if raw_input(username + " would you like to play again? (y/n)" + os.linesep).lower() == 'y': 
+        print "play again" 
+    else: 
+        print username + ", thank you for playing, see you soon!" 
+
+
 def game():
     username = ""
     difficulty_level = None
