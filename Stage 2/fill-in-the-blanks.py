@@ -283,6 +283,11 @@ def win(username):
         print username + ", thank you for playing, see you soon!" 
 
 
+def game_over():
+    print "Game Over!!!"
+    exit()
+
+
 def game():
     username = ""
     difficulty_level = None
