@@ -72,8 +72,10 @@ def get_username_from_user():
 
     return username
 
+
 def difficulty_index_list():
- return ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
+    return ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
+
 
 def difficulty(level):
 
@@ -107,7 +109,35 @@ Possible choices includes (e)asy, (m)edium, (h)ard, (v)ery hard, (u)ltra hard an
     return get_difficulty_level_from_user(username)
 
 
+def get_custom_guesses_from_user():
+    user_input = raw_input("How many guesses do you want?" + os.linesep)
 
+    if not user_input.isdigit():
+        print "Please enter a number representing your number of guesses!"
+        return get_custom_guesses_from_user()
+
+    if int(user_input) < 1:
+        print "Please enter a number from 1 and upwords!"
+        return get_custom_guesses_from_user()
+
+    return int(user_input)
+
+
+def get_number_of_guesses(difficulty_level):
+    
+    guesses_per_difficulty_level = {"easy" : 5, "medium" : 4, "hard" : 3, "very hard" : 2, "ultra hard" : 1}
+    difficulty_index = difficulty_index_list()
+
+    if difficulty_level == difficulty("custom"):
+        return get_custom_guesses_from_user()
+
+    for k, v in guesses_per_difficulty_level.items():
+        if k == difficulty_index[difficulty_level]:
+            return v
+    
+    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
+    # Could have returned/raised an error, but for this project we just return 5 guesses for easy.
+    return guesses_per_difficulty_level["easy"]
 
 
 def get_quiz_blanks(difficulty_level):
@@ -125,19 +155,7 @@ def get_quiz_blanks(difficulty_level):
     return ["___1___", "___2___", "___3___", "___4___"]
 
 
-def get_number_of_guesses(difficulty_level):
-    if difficulty_level == difficulty("easy"):
-        return 5
 
-    elif difficulty_level == difficulty("medium"):
-        return 4
-
-    elif difficulty_level == ifficulty("hard"):
-        return 3
-    
-    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
-    # Could have returned/raised an error, but for this project we just return 5 guesses for easy.
-    return 5
 
 
 def get_quiz_text(difficulty_level):
@@ -171,10 +189,9 @@ def game():
     
     difficulty_level = get_difficulty_level_from_user(username)
 
-    print difficulty_level
+    print os.linesep + "You will get %s guesses per problem." % (get_number_of_guesses(difficulty_level)) + os.linesep
     
-    #print os.linesep + "You will get %s guesses per problem." % (get_number_of_guesses(difficulty_level)) + os.linesep
-    
+
 
 def main():
     game()
