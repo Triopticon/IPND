@@ -275,16 +275,22 @@ def get_user_quiz_answer(quiz_blank, quiz_answer, number_of_guesses_left):
 
 
 def won(username):
-    print "WOW Congratulations! You got all questions correct!"
+    print os.linesep + "WOW Congratulations! You got all questions correct!" + os.linesep
 
-    if raw_input(username + " would you like to play again? (y/n)" + os.linesep).lower() == 'y': 
-        print "play again" 
+    if raw_input(username + " would you like to play again? (y/n) ").lower() == 'y': 
+        game_loop(username) 
     else: 
-        print username + ", thank you for playing, see you soon!" 
+        print username + ", thank you for playing, see you soon!" + os.linesep
 
 
-def game_over():
-    print "Game Over!!!"
+def game_over(username):
+    print os.linesep + "Game Over!!!" + os.linesep
+
+    if raw_input(username + " would you like to play again? (y/n) ").lower() == 'y': 
+        game_loop(username) 
+    else: 
+        print ousername + ", thank you for playing, see you soon!" + os.linesep
+
     exit()
 
 
@@ -312,7 +318,7 @@ def game_loop(username):
         number_of_guesses_left = get_user_quiz_answer(quiz_blanks[count], quiz_answer, number_of_guesses_left)
 
         if number_of_guesses_left < 1:
-            game_over()
+            game_over(username)
 
         quiz_text = replace_word(quiz_text, quiz_blanks[count], quiz_answer)
 
