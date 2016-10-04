@@ -229,6 +229,12 @@ Possible choices includes (e)asy, (m)edium, (h)ard, (v)ery hard and (u)ltra hard
     return quiz_difficulty_level
 
 
+def quiz_blank_in_pos(word, quiz_blank):
+    if quiz_blank in word:
+        return quiz_blank
+    return None
+
+
 def game():
     username = ""
     difficulty_level = None
