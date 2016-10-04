@@ -46,6 +46,7 @@ tuple, and ___4___ or can be more complicated such as objects and lambda functio
 
 
 def welcome():
+
     print """
 #################################################
 #                                               #
@@ -58,6 +59,7 @@ def welcome():
 """
 
 def get_username_from_user():
+
     username = raw_input("Please enter your name? ")
 
     if username == "":
@@ -74,7 +76,18 @@ def get_username_from_user():
 
 
 def difficulty_index_list():
+
     return ["custom", "easy", "medium", "hard", "very hard", "ultra hard"]
+
+
+def input_check_list():
+
+    return ["c", "e", "m", "h", "v", "u"]
+
+
+def difficulty_level_feedback_text():
+
+    return ["CUSTOM", "EASY", "MEDIUM", "HARD", "VERY HARD", "ULTRA HARD"]
 
 
 def difficulty(level):
@@ -89,28 +102,36 @@ def difficulty(level):
 
 
 def get_difficulty_level_from_user(username):
-    print os.linesep + username + """ please select a game difficulty by typing it in!
-Use full word or first letter.
-Possible choices includes (e)asy, (m)edium, (h)ard, (v)ery hard, (u)ltra hard and (c)ustom."""
 
     index_list = difficulty_index_list()
-    user_input_check_list = ["c", "e", "m", "h", "v", "u"]
-    difficulty_level_text = ["CUSTOM", "EASY", "MEDIUM", "HARD", "VERY HARD", "ULTRA HARD"]
+    user_input_check_list = input_check_list()
+    difficulty_level_text = difficulty_level_feedback_text()
 
     # Convert input to lowercase for ease of use. 
-    user_input = raw_input("What is your choise?" + os.linesep).lower()
+    user_input = raw_input(username + ", what is your choise? ").lower()
 
     if user_input in user_input_check_list:
         difficulty_level = difficulty(index_list[user_input_check_list.index(user_input[0])])
-        print os.linesep + "You have choosen %s as your difficulty level" % (difficulty_level_text[difficulty_level])
+
+        print os.linesep + username + ", you have choosen %s as your difficulty level" % (difficulty_level_text[difficulty_level])
         return difficulty_level
 
-    print os.linesep + "You did not correctly choose your difficulty level"
+    print os.linesep + username + ", you did not correctly choose your difficulty level"
+    return get_difficulty_level_from_user(username)
+
+
+def get_game_difficulty_level_from_user(username):
+
+    print os.linesep + username + """, please select a game difficulty by typing it in!
+Use full word or first letter.
+Possible choices includes (e)asy, (m)edium, (h)ard, (v)ery hard, (u)ltra hard and (c)ustom."""
+
     return get_difficulty_level_from_user(username)
 
 
 def get_custom_guesses_from_user():
-    user_input = raw_input("How many guesses do you want?" + os.linesep)
+
+    user_input = raw_input("How many guesses do you want? ")
 
     if not user_input.isdigit():
         print "Please enter a number representing your number of guesses!"
@@ -140,57 +161,92 @@ def get_number_of_guesses(difficulty_level):
     return guesses_per_difficulty_level["easy"]
 
 
-def get_quiz_blanks(difficulty_level):
-    if difficulty_level == difficulty("easy"):
-        return ["___1___", "___2___", "___3___", "___4___"]
-
-    elif difficulty_level == difficulty("medium"):
-        return ["___1___", "___2___", "___3___", "___4___", "___5___"]
-
-    elif difficulty_level == ifficulty("hard"):
-        return ["___1___", "___2___", "___3___", "___4___", "___5___", "___6___"]
-        
-    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
-    # Could have returned/raised an error, but for this project we just return quiz blanks for easy.
-    return ["___1___", "___2___", "___3___", "___4___"]
-
-
-
-
-
-def get_quiz_text(difficulty_level):
+def get_quiz_text_and_answer():
 
     easy_quiz_text = """A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
 adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
 don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
 tuple, and ___4___ or can be more complicated such as objects and lambda functions."""
 
-    if difficulty_level == difficulty("easy"):
-        return easy_quiz_text
+    easy_quiz_answer = ["answer 1", "answer 2", "answer 3", "answer 4"]
 
-    elif difficulty_level == difficulty("medium"):
-        return "medium"
-    elif difficulty_level == ifficulty("hard"):
-        return "hard"
+    medium_quiz_text = """___1___ ___2___ ___3___ ___4___ ___5___"""
 
-    # Just to be on the safe side, but can make it harder to spot a bug/error this way.
-    # Could have returned/raised an error, but for this project we just return the fill_in_the_blank text for easy.
-    return easy_quiz_text
+    medium_quiz_answer = ["answer 1", "answer 2", "answer 3", "answer 4", "answer 5"]
+
+    hard_quiz_text = """___1___ ___2___ ___3___ ___4___ ___5___ ___6___"""
+
+    hard_quiz_answer = ["answer 1", "answer 2", "answer 3", "answer 4", "answer 5", "answer 6"]
+
+    very_hard_quiz_text = """___1___ ___2___ ___3___ ___4___ ___5___ ___6___ ___7___"""
+
+    very_hard_quiz_answer = ["answer 1", "answer 2", "answer 3", "answer 4", "answer 5", "answer 6", "answer 7"]
+
+    ultra_hard_quiz_text = """___1___ ___2___ ___3___ ___4___ ___5___ ___6___ ___7___ ___8___"""
+
+    ultra_hard_quiz_answer = ["answer 1", "answer 2", "answer 3", "answer 4", "answer 5", "answer 6", "answer 7", "answer 8"]
+
+    return {"easy" : [easy_quiz_text, easy_quiz_answer], "medium" : [medium_quiz_text, medium_quiz_answer], "hard" : [hard_quiz_text, hard_quiz_answer], "very hard" : [very_hard_quiz_text, very_hard_quiz_answer], "ultra hard" : [ultra_hard_quiz_text, ultra_hard_quiz_answer]}
 
 
+
+def get_quiz(difficulty_level, username, quiz):
+
+    index_list = difficulty_index_list()
+    quiz_blanks = []
+
+    if difficulty_level == difficulty("custom"):
+        difficulty_level = get_quiz_difficulty_level_when_custom(difficulty_level, username)
+
+    for k, v in quiz.items():
+        if index_list[difficulty_level] == k:
+
+            count = len(v[1])
+            i = 1
+            while i <= count:
+                quiz_blanks.append("___%s___" % (i))
+                i += 1
+
+            return v[0], v[1], quiz_blanks
+
+    return None
+
+def get_quiz_difficulty_level_when_custom(difficulty_level, username):
+
+    if difficulty_level == difficulty("custom"):
+        print  os.linesep + username + """, since you have choosen custom difficulty you need to choose which quiz text dificulty you want to try.
+Please select a difficulty by typing it in!
+Use full word or first letter.
+Possible choices includes (e)asy, (m)edium, (h)ard, (v)ery hard and (u)ltra hard.
+"""
+
+    quiz_difficulty_level = get_difficulty_level_from_user(username)
+
+    if quiz_difficulty_level == difficulty("custom"):
+        print os.linesep + username + ", you can not choose CUSTOM, please choose again!"
+        quiz_difficulty_level = get_difficulty_level_from_user(username)
+
+    return quiz_difficulty_level
 
 
 def game():
     username = ""
     difficulty_level = None
+    number_of_guesses = None
+    quiz_text= ""
+    quiz_answer = []
+    quiz_blanks = []
     
     welcome()
     username = get_username_from_user()
     
-    difficulty_level = get_difficulty_level_from_user(username)
+    difficulty_level = get_game_difficulty_level_from_user(username)
 
-    print os.linesep + "You will get %s guesses per problem." % (get_number_of_guesses(difficulty_level)) + os.linesep
+    number_of_guesses = get_number_of_guesses(difficulty_level)
+
+    print os.linesep + "You will get %s guesses per problem." % (number_of_guesses) + os.linesep
     
+    quiz_text, quiz_answer, quiz_blanks = get_quiz(difficulty_level, username, get_quiz_text_and_answer())
 
 
 def main():
