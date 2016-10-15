@@ -3,3 +3,4 @@ My work in regard to the course I am taking: Intro to Programming Nanodegree @ U
 
 ## See my finished projects here:
 - Stage 1: Make a Web Page - https://github.com/Triopticon/IPND-Stage1-MakeAWebPage
+- Stage 2: Code Your Own Quiz - https://github.com/Triopticon/IPND-Stage2-CodeYourOwnQuiz
