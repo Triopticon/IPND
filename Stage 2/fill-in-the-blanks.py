@@ -238,7 +238,9 @@ def get_custom_guesses_from_user():
         print "Please enter a number representing your number of guesses!"
         return get_custom_guesses_from_user()
 
-    if int(user_input) < 1:
+    lowes_valid_guesses_number = 1
+
+    if int(user_input) < lowes_valid_guesses_number:
         print "Please enter a number from 1 and upwords!"
         return get_custom_guesses_from_user()
 
@@ -403,6 +405,8 @@ def get_user_quiz_answer(quiz_blank, quiz_answer, number_of_guesses_left):
         The number of guesses left as number/int.
     """
 
+    last_guess_left = 1
+
     while True:
         user_input = raw_input(os.linesep + "What should be substituted in for " + quiz_blank + "? ")
 
@@ -410,10 +414,10 @@ def get_user_quiz_answer(quiz_blank, quiz_answer, number_of_guesses_left):
             number_of_guesses_left -= 1
             user_feedback_text = os.linesep * 2 + "That isn't the correct answer! You only have %s try left!" % (number_of_guesses_left)
 
-            if number_of_guesses_left > 1:
+            if number_of_guesses_left > last_guess_left:
                 print user_feedback_text
 
-            elif number_of_guesses_left == 1:
+            elif number_of_guesses_left == last_guess_left:
                 print user_feedback_text + " Make it count!"
 
             else:
@@ -481,12 +485,13 @@ def game_loop(username):
 
     quiz_text = quiz_text.split()
 
+    lowes_valid_guesses_left = 1
     count = 0
     for quiz_answer in quiz_answers:
 
         number_of_guesses_left = get_user_quiz_answer(quiz_blanks[count], quiz_answer, number_of_guesses_left)
 
-        if number_of_guesses_left < 1:
+        if number_of_guesses_left < lowes_valid_guesses_left:
             game_over(username)
 
         quiz_text = replace_word(quiz_text, quiz_blanks[count], quiz_answer)
